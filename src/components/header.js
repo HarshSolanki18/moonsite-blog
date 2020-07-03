@@ -6,6 +6,7 @@ import Img from "gatsby-image";
 
 
 
+
 const Header = () =>{ 
   const {image}=useStaticQuery(graphql`
     query{
@@ -41,8 +42,10 @@ return(
       <li>
       <Link to="/contact/" activeClassName={styles.activeNav}>
         Contact
-      </Link>  
-      </li>      
+      </Link> 
+       
+      </li>
+           
       </ul>
     </nav>
   </header>

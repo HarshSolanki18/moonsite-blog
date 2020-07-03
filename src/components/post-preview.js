@@ -25,7 +25,7 @@ const PostPreview = () => {
         <h3>
           <Link to={post.slug}>{post.title}</Link>
         </h3>
-        <p>{post.excerpt}</p>
+        <p>{post.description}</p>
         <ReadLink to={post.slug}>read this post &rarr;</ReadLink>
       </div>
      </div> 

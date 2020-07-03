@@ -8,6 +8,7 @@ const usePosts = () => {
           frontmatter {
             title
             author
+            description
             slug
             image {
               sharp: childImageSharp {
@@ -38,6 +39,7 @@ const usePosts = () => {
     slug: post.frontmatter.slug,
     image: post.frontmatter.image,
     excerpt: post.excerpt,
+    description: post.frontmatter.description
   }));
 };
 
