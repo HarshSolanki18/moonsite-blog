@@ -1,13 +1,28 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import styles from "./header.module.scss"
+import { Link ,graphql,useStaticQuery} from 'gatsby';
+import styles from "./header.module.scss";
+import Img from "gatsby-image";
 
 
 
-const Header = () => (
+
+const Header = () =>{ 
+  const {image}=useStaticQuery(graphql`
+    query{
+     image: file(relativePath: {eq: "moonsite-image.jpg"}){
+       sharp: childImageSharp{
+         fixed(width:40,height:40){
+           ...GatsbyImageSharpFixed
+         }
+       }
+     } 
+    }
+  `)
+return(
   <header>
     <h1>
-    <Link to="/"  activeClassName={styles.activeNav}>
+    <Link to="/"   activeClassName={styles.activeNav}>
+      <Img alt="" fixed={image.sharp.fixed}  className={styles.avatar}/>
       Moonsite Blogs
     </Link>
     </h1>
@@ -32,5 +47,6 @@ const Header = () => (
     </nav>
   </header>
 );
+}
 
 export default Header;
