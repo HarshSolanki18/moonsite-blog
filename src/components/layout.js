@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './layout.module.scss';
+import  './layout.module.scss';
 import Helmet from 'react-helmet';
 import Header from './header';
 import useSiteMetadata from '../hooks/use-sitemetadata';
