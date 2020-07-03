@@ -2,7 +2,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0.4rem;
     position: sticky;
     top: 0;
     background: hsla(0, 0%, 100%, 0.75);
@@ -23,6 +23,7 @@ header {
     h1 {
       margin-top: 5px;
     }
+    
   
     nav a {
       color: #757575;
@@ -75,7 +76,7 @@ header {
   @media (max-width: 1000px) {
     header {
       display: block;
-      height: 120px;
+      height: 70px;
     }
   
     nav {
@@ -105,7 +106,7 @@ header {
   
   @media (max-width: 520px) {
     header nav a {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       border: 1px solid #eee;
       padding: 2px;
       border-radius: 5px;

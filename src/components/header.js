@@ -7,7 +7,7 @@ import styles from "./header.module.scss"
 const Header = () => (
   <header>
     <h1>
-    <Link to="/" activeClassName={styles.activeNav}>
+    <Link to="/"  activeClassName={styles.activeNav}>
       Moonsite Blogs
     </Link>
     </h1>
