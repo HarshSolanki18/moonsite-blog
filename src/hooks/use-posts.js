@@ -11,6 +11,11 @@ const usePosts = () => {
             slug
             image {
               sharp: childImageSharp {
+                fixed(
+                  height:200,width:268){
+                    ...GatsbyImageSharpFixed
+                  }
+                
                 fluid(
                   maxWidth: 100
                   maxHeight: 100
