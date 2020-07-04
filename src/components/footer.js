@@ -13,13 +13,7 @@ const Footer = () => (
         >
           Twitter
         </a>
-        <a
-          href={`https://github.com/HarshSolanki18`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
+        
         <a
           href={`https://moonsitesolutions.herokuapp.com`}
           target="_blank"
@@ -27,6 +21,7 @@ const Footer = () => (
         >
           Moonsite Solutins
         </a>
+        
       </div>
       <div className={styles.copyright}>Copyright © 2020. All rights reserved.</div>
     </div>
