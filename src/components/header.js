@@ -32,11 +32,7 @@ return(
         Home
       </Link>  
       </li>
-      <li>
-      <Link to="/about/" activeClassName={styles.activeNav}>
-        About
-      </Link>
-      </li>  
+       
       <li>
       <Link to="/contact/" activeClassName={styles.activeNav}>
         Contact
