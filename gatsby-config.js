@@ -11,6 +11,16 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
     {
+      resolve:'gatsby-plugin-manifest',
+      options:{
+        name: "Moonsite Solutions",
+        theme_color: "#1b4070",
+        start_url: "/",
+        display: "standalone",
+        icon: "images/moonsite-image.jpg"
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {

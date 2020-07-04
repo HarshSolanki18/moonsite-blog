@@ -3,7 +3,7 @@ import  './layout.module.scss';
 import Helmet from 'react-helmet';
 import Header from './header';
 import useSiteMetadata from '../hooks/use-sitemetadata';
-
+import Footer from '../components/footer';
 const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
 
@@ -19,7 +19,9 @@ const Layout = ({ children }) => {
       <main>
         {children}
       </main>
+      <Footer />
     </>
+
   );
 };
 

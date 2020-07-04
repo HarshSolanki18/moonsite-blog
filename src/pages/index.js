@@ -9,7 +9,7 @@ export default () => {
     <>
       
       <Layout>
-        <h2>Read my blog</h2>
+        <h2>Read our blogs</h2>
         <PostPreview />
       
       </Layout>

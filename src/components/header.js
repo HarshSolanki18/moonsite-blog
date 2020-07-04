@@ -2,8 +2,7 @@ import React from 'react';
 import { Link ,graphql,useStaticQuery} from 'gatsby';
 import styles from "./header.module.scss";
 import Img from "gatsby-image";
-
-
+import Tags from "../components/tags";
 
 
 const Header = () =>{ 
@@ -41,8 +40,10 @@ return(
       <li>
       <Link to="/contact/" activeClassName={styles.activeNav}>
         Contact
-      </Link>  
-      </li>      
+      </Link> 
+       
+      </li>
+      <Tags activeClassName={styles.activeClassName}/>     
       </ul>
     </nav>
   </header>
