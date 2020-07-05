@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './contact.module.scss';
-import {LinkedinIcon,RedditIcon,MailruIcon} from 'react-share';
-import {FiMail,FiLink,FiSmartphone} from 'react-icons/fi';
+import {FiMail,FiLink} from 'react-icons/fi';
 import {GiSmartphone} from 'react-icons/gi'
 const Contactus = ({mobile}) =>{
-    const iconsize=mobile?32:32;
     return (
         <div>
         <div className={styles.contactIntro}>

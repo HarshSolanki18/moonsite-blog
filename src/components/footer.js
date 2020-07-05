@@ -7,14 +7,6 @@ const Footer = () => (
     <div className={styles.container}>
       <div>
         <a
-          href={`https://twitter.com/gatsbyjs`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
-        
-        <a
           href={`https://moonsitesolutions.herokuapp.com`}
           target="_blank"
           rel="noopener noreferrer"
