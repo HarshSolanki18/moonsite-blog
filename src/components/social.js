@@ -12,15 +12,15 @@ export default function Social({post}) {
             tittle={post.frontmatter.title}>
             <TwitterIcon size={32} round={true} />
             </TwitterShareButton>
-            <WhatsappShareButton url={`https://moonsiteblogs.nelify.app/${post.frontmatter.slug}/`}
+            <WhatsappShareButton url={`https://moonsiteblogs.netlify.app/${post.frontmatter.slug}/`}
             title={post.frontmatter.title}>
                 <WhatsappIcon  size={32} round={true}/> 
             </WhatsappShareButton >
-            <LinkedinShareButton url={`https://moonsiteblogs.nelify.app/${post.frontmatter.slug}/`}
+            <LinkedinShareButton url={`https://moonsiteblogs.netlify.app/${post.frontmatter.slug}/`}
             title={post.frontmatter.title}>
             <LinkedinIcon size={32} round={true}/>
             </LinkedinShareButton>
-            <RedditShareButton url={`https://moonsiteblogs.nelify.app/${post.frontmatter.slug}/`}
+            <RedditShareButton url={`https://moonsiteblogs.netlify.app/${post.frontmatter.slug}/`}
             title={post.frontmatter.title}>
              <RedditIcon size={32} round={true}/>   
             </RedditShareButton>
