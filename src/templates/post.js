@@ -18,6 +18,7 @@ export const query = graphql`
         date(formatString: "YYYY-MM-DD")
         author
         tags
+        slug
         userAvatar{
           sharp: childImageSharp{
             fixed(height:70,width:70){
