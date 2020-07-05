@@ -25,4 +25,9 @@ footer {
         text-align: right;
  
     }
+    @media (max-width:650px){
+        .copyright{
+            font-size: smaller;
+        }
+    }
 }

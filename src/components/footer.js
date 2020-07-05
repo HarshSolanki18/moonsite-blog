@@ -11,7 +11,7 @@ const Footer = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          Moonsite Solutins
+          Moonsite Solutions
         </a>
         
       </div>

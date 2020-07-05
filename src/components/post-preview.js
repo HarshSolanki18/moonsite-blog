@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Image from 'gatsby-image';
-import ReadLink from '../components/read-link';
+//import ReadLink from '../components/read-link';
 import styles from './post-preview.module.scss';
 import usePosts from '../hooks/use-posts';
 
@@ -26,7 +26,7 @@ const PostPreview = () => {
           <Link to={post.slug}>{post.title}</Link>
         </h3>
         <p>{post.description}</p>
-        <ReadLink to={post.slug}>read this post &rarr;</ReadLink>
+       
       </div>
      </div> 
     </article> 
