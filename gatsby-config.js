@@ -10,6 +10,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
+    'gatsby-remark-prismjs',
     {
       resolve:'gatsby-plugin-manifest',
       options:{
