@@ -45,7 +45,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
     <div className={styles.postMeta}>
             <PostTags tags={post.frontmatter.tags} />
     </div>  
-    <MDXRenderer>{post.body}</MDXRenderer>
+    <MDXRenderer >{post.body}</MDXRenderer>
     <Bio post={post}/>
     
     

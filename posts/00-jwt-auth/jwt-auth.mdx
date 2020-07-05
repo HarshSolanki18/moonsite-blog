@@ -1,0 +1,157 @@
+---
+title: Stateless authorization using JWT in node.js made easy
+date: 2020-02-07
+slug: jwt-auth
+author: Kundan Chandel
+image: images/node-jwt.jpg
+userAvatar: images/kundan.jpg
+userTwitter: _ksc07_
+description: This blog demonstrates how to apply stateless authorization using jwt in node.js
+tags:
+    - Tech
+    - Node
+---
+
+![Globe](images/node-jwt.jpg)
+
+# Using JWT for stateless authorization.
+## Introduction
+Before diving deep let us first understand what **authorization** means?
+So basically authorization means giving someone permission to do or have something. Similarly in Web(or app) we authorize user to access private routes once logged in.
+
+While **authentication** is simply verifying a user.  Authentication is divided into two main type, **Stateful** and **Stateless**.
+**a. Stateful:-** In Stateful authentication a session is created on server once authenticated, and after this user is authorized to access private routes until session exist.
+
+**b. Stateless:-** In Stateless authentication no session is created but a token is generated and send it to the client(user) and when that client(user) wants to access private route he has to show that token, once verifying the token authorization is granted.
+
+In Stateless authentication we generally use **JWT** or **JSON Web Tokens**.
+
+## Implementation
+In this article we are going to create three simple routes as `/register` `/login` and a `/secret` route to implement authorization.
+`/secret` is going to be our private route.
+
+We are going to implement this inside node application using express.
+
+**Step 0:-** Dependencies
+Packages required are 
++ express:- for routing;
++ jsonwebtoken:- for implementing tokens
++ bcrypt:- for password hashing of password.
+
+```js
+var express         = require("express"); 
+var app             = express();
+var jwt             = require("jsonwebtoken");
+```
+**Step 1:-** Register route
+In our registration route we have to perform 4 main operation as
++ Generating salt for hashing.
++ Hashing of password
++ Creating a user
++ Redirect route to `/login`.
+
+```js
+app.post("/register",async function(req,res){
+    //Salt generation through bcrypt
+    const salt = await bcrypt.genSalt(10);
+
+    //Hashing password 
+    const hashedPassword =await bcrypt.hash(req.body.password,salt)
+
+    //Creating user
+    var user = new User({username:req.body.username, email:req.body.email, password:hashedPassword});
+    user.save()
+
+    //redirecting to /login route
+    res.redirect("/")
+});
+```
+**Step 2:-** Login route
+In our login route we have to perform 3 main operation as
++ Finding user in your database using email(can use any other key too)
++ Comparing password with hashed password
++ Creating and sending token
+
+```js
+app.post("/login",async function(req,res){
+    //Finding user
+    const user = await User.findOne({email:req.body.email});
+    (!user){//if user does't exist
+        return res.json('user not found')
+    }
+
+    //Comparing password
+    const validPass =await bcrypt.compare(req.body.password,user.password)
+    
+    if(!validPass){
+       return  res.json("Invalid password")
+    }else{
+
+        //Creating a token with user id 
+        const token = jwt.sign({_id:user._id},process.env.TOKEN_SECRET);
+        
+        //sending token
+        res.json({token});
+    }
+});
+```
+Format of jwt.sign() is `jwt.sign(payload, secretOrPrivateKey, [options, callback])`
+Where 
++ payload is the data we want to send(in our case it is user._id),
++ secretOrPrivateKey is a key for security of token we use during authorization
++ optional options for token.
+
+**Step 3:-** Secret route
+This route is our private route and we want to give access once the user is logged in.
+We make a route private by adding a express middleware to check whether a client is authorized to access that route or not, id user is authorized it will give access to the user else it will not.
+We are going to add a middleware function `isLoggedIn`.
+
+```js
+app.get("/secret",isLoggedIn,function(req,res){
+    //Secret route
+    res.json({"msg":"inside secret route"});
+});
+```
+
+Middleware
+
+```js
+function isLoggedIn(req,res,next){
+     //get token from header 
+    const token = req.header('x-auth-token');
+
+    // check if no token
+    if(!token){
+        return res.json({msg:"No token, authorization denied "});
+    }
+
+    // verify token
+    try {
+        const decoded = jwt.verify(token,process.env.TOKEN_SECRET);
+        req.user = decoded.user;
+        next();
+    } catch (error) {
+        res.json({msg:"token is not valid"});
+    }
+}
+```
+
+*We are expecting a user to send token via x-auth-token header*
+
+Thats it for today's article.
+***
+In this article we have had a very quick look through the JWT JSON Web Token. Have a play with the code.
+We would like to grow our readership. Can you help us out by sharing this blog post?
+
+Thank You.
+
+
+
+
+
+
+
+
+
+
+

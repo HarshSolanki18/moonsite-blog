@@ -10,7 +10,6 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
-    'gatsby-remark-prismjs',
     {
       resolve:'gatsby-plugin-manifest',
       options:{
@@ -20,6 +19,12 @@ module.exports = {
         display: "standalone",
         icon: "images/moonsite-image.jpg"
       },
+    },
+    {
+    resolve: `gatsby-plugin-typography`,
+    options: {
+      pathToConfigModule: `src/util/typography`,
+    },
     },
     {
       resolve:'gatsby-plugin-google-analytics',
