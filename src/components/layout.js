@@ -14,6 +14,7 @@ const Layout = ({ children }) => {
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="google-site-verification" content="kxL9_E_IZwrBntwkx3mlR044XSb4I34Y4uiYyq8Px44" />
       </Helmet>
       <Header />
       <main>
