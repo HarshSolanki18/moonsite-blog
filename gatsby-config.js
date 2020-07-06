@@ -3,8 +3,10 @@ module.exports = {
     title: 'Moonsite Blogs',
     description:
       'A site to showcase moonsite solutions blogsS',
+    siteUrl:'https://moonsiteblogs.netlify.app',  
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
