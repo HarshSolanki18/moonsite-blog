@@ -6,7 +6,7 @@ author: Kundan Chandel
 image: images/css-grid.png
 userAvatar: images/kundan.jpg
 userTwitter: _ksc07_
-description: This blog demonstrates how to apply stateless authorization using jwt in node.js
+description: This blog demonstrates how to make your website responsive using css grid
 tags:
     - Tech
     - CSS
@@ -21,7 +21,6 @@ A network of lines that cross each other to form a series of squares or rectangl
 
 ### 2. What is CSS grid?
 
-
 CSS Grid is a powerful tool that allows for 2-dimensional layouts to be created on the web. It is a 2-dimensional system, meaning it can handel layout in row and columns.
 
 
@@ -31,8 +30,7 @@ CSS Grid is a powerful tool that allows for 2-dimensional layouts to be created 
  ex.
  
 ```css
- 
-.container{display:grid; 
+ .container{display:grid; 
 }
  ```
  
@@ -45,27 +43,21 @@ The best practice is to use fr(fraction) for responsiveness.
 ex. 
  
 ```css
- 
-.container{ 
-    
-	display:grid;
-  
-      grid-template-columns: 1fr 3fr 1fr
- 
-}
+ .container{ 
+    	display:grid;
+  	 grid-template-columns: 1fr 3fr 1fr
+ }
  ```
   
 **3. grid-area :-** This property is used to specify the location and size of an item inside the container.
   
 We specify a name for every items to use inside our grid-template-area (We will learn this next.)
-  
 We set the property grid-area with a name to each items we want to use inside our container.
- In this exapmle we have 5 items as Navigation-Bar ,Main, Left-Side-Item, Right-Side-Item and Footer. We give all of them a name as
+In this exapmle we have 5 items as Navigation-Bar ,Main, Left-Side-Item, Right-Side-Item and Footer. We give all of them a name as
  
  ```css
-  
-.navbar{grid-area:navbar}
-  ```
+  .navbar{grid-area:navbar}
+ ```
 
 **4. grid-template-areas :-** The last and most important step is to specify our layout in term of rows and columns,
  and we do this by using grid-template-areas inside our container as
@@ -75,15 +67,10 @@ We set the property grid-area with a name to each items we want to use inside ou
 .container{
   
 display:grid;
-  
 grid-template-columns:1fr 3fr 1fr;
-  
 grid-template-areas:"navbar navbar navbar"
-   
-                      "leftSide main rightSide"
-
-                       "footer footer footer";
-    
+   		    "leftSide main rightSide"
+		    "footer footer footer";
 }
 ```
  
@@ -108,38 +95,26 @@ We are going to implement a simple 5 component layout as
 
 ```html
     <div class="container">
-
-        <div class="navbar">
-
-            NavBar
-
-        </div>
+	 <div class="navbar">
+		 NavBar
+	</div>
 
         <div class="main">
-
-            Main
-
-        </div>
+		Main
+	</div>
 
         <div class="leftSide">
-
-            Left  Side
-
-        </div>
+	    Left  Side
+	</div>
 
         <div class="rightSide">
-
-            Right Side
-
-        </div>
+	     Right Side
+	</div>
 
         <div class="footer">
-
-            Footer
-
-        </div>
-
-    </div>
+		Footer
+	</div>
+     </div>
 
 ```
 
