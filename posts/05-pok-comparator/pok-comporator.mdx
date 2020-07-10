@@ -160,8 +160,8 @@ Now add the one more component **Preview.js**
 ```js
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
-const i = -1;
-const j = -1;
+let i = -1;
+let j = -1;
 export default function Preview({ pokemon1, pokemon2 }) {
   return (
     <div className="preview">
@@ -187,12 +187,13 @@ export default function Preview({ pokemon1, pokemon2 }) {
         </h4>
         <img src={pokemon1.sprites.front_default} alt="" />
         {pokemon1.stats.map((stat) => {
+          j=(j+1)%5
           return (
             <h4
               key={uuidv4()}
               style={{
                 color:
-                  pokemon2.stats[j + 1].base_stat < stat.base_stat
+                  pokemon2.stats[j].base_stat < stat.base_stat
                     ? "green"
                     : "red",
               }}
@@ -211,12 +212,13 @@ export default function Preview({ pokemon1, pokemon2 }) {
         </h4>
         <img src={pokemon2.sprites.front_default} alt="" />
         {pokemon2.stats.map((stat) => {
+          i=(i+1)%5
           return (
             <h4
               key={uuidv4()}
               style={{
                 color:
-                  pokemon1.stats[i + 1].base_stat < stat.base_stat
+                  pokemon1.stats[i].base_stat < stat.base_stat
                     ? "green"
                     : "red",
               }}
