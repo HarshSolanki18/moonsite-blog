@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from 'prop-types';
 import styles from '../components/post-preview.module.scss'
 // Components
-import ReadLink from '../components/read-link';
 import { Link, graphql } from "gatsby";
 import Layout from '../components/layout';
 import Image from 'gatsby-image';
@@ -38,7 +37,7 @@ const Tags = ({ pageContext, data }) => {
                             <Link to={`/${slug}/`}>{title}</Link>
                         </h3>
                             <p>{node.frontmatter.description}</p>
-                    <ReadLink to={`/${slug}/`}>read this post &rarr;</ReadLink>
+                    
                     </div>
                     </div>
                   </article>
