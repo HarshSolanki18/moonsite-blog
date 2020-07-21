@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Moonsite Blogs',
     description:
-      'A site to showcase moonsite solutions blogsS',
+      'A site to showcase moonsite solutions blogs.Blogs are based on tech topics especially related to web development',
     siteUrl:'https://moonsiteblogs.netlify.app',  
   },
   plugins: [

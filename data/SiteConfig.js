@@ -1,12 +1,12 @@
 const config = {
     siteTitle: 'Moonsite Blogs', // Site title.
     siteTitleShort: 'Moonsite Blogs', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
-    siteTitleAlt: 'Moonsite Blogs', // Alternative site title for SEO.
+    siteTitleAlt: 'Moonsite Solutions Blogs', // Alternative site title for SEO.
     //siteLogo: '/logos/logo-1024.png', // Logo used for SEO and manifest.
     siteUrl: 'https://moonsiteblogs.netlify.app', // Domain of your website without pathPrefix.
     pathPrefix: '', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
     siteDescription:
-      'A blog website mainly consists of tech blogs', // Website description used for RSS feeds/meta description tag.
+      'A blog website mainly consists of tech blogs written by team of moonsite solutions', // Website description used for RSS feeds/meta description tag.
     //siteRss: '/rss.xml', // Path to the RSS file.
     //siteFBAppID: '1825356251115265', // FB Application ID for using app insights
     //googleAnalyticsID: 'UA-161211056-1', // GA tracking ID.

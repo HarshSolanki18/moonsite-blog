@@ -7,7 +7,7 @@ const Footer = () => (
     <div className={styles.container}>
       <div>
         <a
-          href={`https://moonsitesolutions.herokuapp.com`}
+          href={`https://moonsitesolutions.tech/`}
           target="_blank"
           rel="noopener noreferrer"
         >
